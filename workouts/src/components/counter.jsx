@@ -6,16 +6,16 @@ function Counter() {
 
     const [count,setCount]=useState(0)
 
-    const increment=()=>{
+    const increment=()=>{ // stops when count reaches 10
         if(count<10){
             setCount(count+1)
 
         }
         
     }
-    const decrement=()=>{
+    const decrement=()=>{ // stops when count reaches 0
         if(count>0){
-            setCount(count-1)
+            setCount(count-1)   
 
         }
         
