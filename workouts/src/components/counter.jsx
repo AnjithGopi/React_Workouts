@@ -23,17 +23,17 @@ function Counter() {
 
 
   return (
-    <div>
+    <>
 
         <button onClick={increment}>+</button><br /><br />
         <div>
             {count}
         </div><br /><br />
         <button onClick={decrement}>-</button>
-
+    </>
        
       
-    </div>
+    
   )
 }
 

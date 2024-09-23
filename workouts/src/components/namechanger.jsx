@@ -3,13 +3,18 @@ import {useState} from "react"
 function Namechanger() {
 
     const [name,setName]=useState("Anjith")
+    const [colour,setColour]=useState("white")
 
     const change=()=>{
        if(name==="Anjith"){
-        setName("Amal")
+        setName("Ambadan")
+        setColour("red")
+
+        
 
        }else{
         setName("Anjith")
+        setColour("white")
 
        }
 
@@ -21,7 +26,7 @@ function Namechanger() {
     <div>
 
         <div>
-            <h1>{name}</h1>
+            <h1 style={{color:colour}}>{name}</h1>
         </div><br />
 
         <button onClick={change}>change</button><br /><br />

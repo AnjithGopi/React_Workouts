@@ -16,7 +16,6 @@ function Formdisplay() {
         <form action="">
             <input type="text" value={input} onChange={handleChange} />
         </form>
-
         <div>
             <h1>{input}</h1>
         </div>
