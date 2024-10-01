@@ -1,35 +1,29 @@
-import {useState} from "react"
+
+import axios from "axios"
+import{useState} from "react"
 
 function Namechanger() {
 
-    const [name,setName]=useState("Anjith")
-    const [colour,setColour]=useState("white")
+  const [data,setData]=useState([])
 
-    const change=()=>{
-       if(name==="Anjith"){
-        setName("Ambadan")
-        setColour("red")
-
-        
-
-       }else{
-        setName("Anjith")
-        setColour("white")
-
-       }
-
-      
-        
-    }
+  const call=()=>{
+    axios.get('https://api.gofile.io/servers').then((response)=>{
+      console.log(response.data)
+      setData(response.data.data.servers)
+    })
+  }
 
   return (
     <div>
 
-        <div>
-            <h1 style={{color:colour}}>{name}</h1>
-        </div><br />
+        
+        <button onClick={call}>click</button><br /><br />
 
-        <button onClick={change}>change</button><br /><br />
+        <div>
+        {data.map((item, index) => (
+          <h1 key={index}>{item.name}</h1>  // Assuming each item has a 'name' property
+        ))}
+        </div>
       
     </div>
   )
