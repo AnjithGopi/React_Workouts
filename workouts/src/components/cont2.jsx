@@ -1,15 +1,17 @@
 import { useContext } from "react"
-import { usercontext } from "./contextEg"
 
 
+import { UserContext } from "./userContext"
 
 function Cont2() {
 
-    const{number,setNumber}= useContext(usercontext)
+    const{number,setNumber}= useContext(UserContext)
   return (
     <div>
 
         <button onClick={()=>setNumber(number+1)}>+</button>
+
+        <div>{number}</div>
       
     </div>
   )

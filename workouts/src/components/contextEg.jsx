@@ -1,9 +1,11 @@
 
-import { useState, createContext } from "react"
+import { useState,  } from "react"
 
 import Cont2 from "./cont2"
 
-export const usercontext=createContext()
+import { UserContext } from "./userContext"
+
+
 
 function ContextEg() {
 
@@ -15,11 +17,11 @@ function ContextEg() {
   return (
     <div>
 
-        <usercontext.Provider value={{number,setNumber}}>
+        <UserContext.Provider value={{number,setNumber}}>
 
         <Cont2/>
 
-        </usercontext.Provider>
+        </UserContext.Provider>
 
       
     </div>
