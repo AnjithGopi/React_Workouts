@@ -7,9 +7,21 @@ import  Count  from './components/count.jsx'
 import Profilecard from './components/profilecard.jsx'
 import Namechanger from './components/namechanger.jsx'
 import Formdisplay from './components/form display.jsx'
+import User from './components/user.jsx'
+import ButtonClicks from './components/buttonClicks.jsx'
+import Names from './components/names.jsx'
+
+const states=[{name:"kerala", language:"Malayalam"},{name:"TamilNadu",language:"Tamil"}]
 
 createRoot(document.getElementById('root')).render(
+
+ 
   <StrictMode>
+    <Names state={states}/>
+    
+    
+
+    <ButtonClicks/>
 
     <Formdisplay/>
     <Count/>
@@ -18,5 +30,6 @@ createRoot(document.getElementById('root')).render(
     <Namechanger/>
     {/* <Counter/> */}
     <Profilecard/>
+    <User/>
   </StrictMode>,
 )
