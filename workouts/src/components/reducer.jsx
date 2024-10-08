@@ -5,24 +5,29 @@ import { useReducer } from "react"
 function reducer(state,action){
 
     if(action.type==="increment"){
-        return  {count:state.count+1}
+        return  {count:state.count+action.value}
     }
 
     if(action.type==="decrement"){
 
-        return {count:state.count-1}
+        return {count:state.count-action.value}
     }
 }
 
 function Reduce() {
 
-    const [state,dispatch]=useReducer(reducer,{count:0})
+
+    let initialState={
+        count:0
+    }
+
+    const [state,dispatch]=useReducer(reducer,initialState)
 
     const increment=()=>{
-        dispatch({type:"increment"})
+        dispatch({type:"increment",value:1})
     }
     const decrement=()=>{
-        dispatch({type:"decrement"})
+        dispatch({type:"decrement",value:1})
     }
   return (
     <div>
